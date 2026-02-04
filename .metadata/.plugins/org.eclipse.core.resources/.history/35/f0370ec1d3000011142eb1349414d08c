@@ -1,0 +1,26 @@
+package java_coding_string;
+
+import java.util.LinkedHashMap;
+import java.util.Map;
+import java.util.function.Function;
+import java.util.stream.Collectors;
+
+public class FirstNonReaptingChar {
+
+	public static void main(String[] args) {
+		String str="Ffcuk";
+		Map<Character , Long> count= str.toLowerCase().chars().filter(ch->ch!=' ').mapToObj(c -> (char) c).collect(Collectors.groupingBy(Function.identity(),LinkedHashMap::new,Collectors.counting()));
+		for (Map.Entry<Character, Long> entry : count.entrySet()) {
+            if (entry.getValue() == 1) {
+            	//in case of first repeating change > instead of == on above line.
+                System.out.println("First non-repeating character: " + entry.getKey());
+                return;
+            }
+        }
+
+        System.out.println("No non-repeating character found");
+	}
+	
+	
+
+}

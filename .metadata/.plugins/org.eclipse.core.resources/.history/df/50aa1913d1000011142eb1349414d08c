@@ -1,0 +1,16 @@
+package java_coding_string;
+
+public class ReverseString {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		String str="hello";
+		
+		String reversed = str.chars()
+		        .mapToObj(c -> (char) c)
+		        .filter(c -> !Character.isLowerCase(c)) // skip lowercase
+		        .reduce("", (a, b) -> b + a, String::concat);
+
+	}
+
+}

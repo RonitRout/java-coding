@@ -1,0 +1,10 @@
+package java_coding_logical;
+
+public class PrintFactros {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

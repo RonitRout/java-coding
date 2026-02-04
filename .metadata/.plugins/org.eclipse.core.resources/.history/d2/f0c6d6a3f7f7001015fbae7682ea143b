@@ -1,0 +1,19 @@
+package java_coding_java8_arrays;
+
+import java.util.Arrays;
+import java.util.Map;
+import java.util.function.Function;
+import java.util.stream.Collectors;
+
+public class OccuranceOfElemetInArray {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		int a[]= {};
+		Map<Integer, Long> occurance=Arrays.stream(a).boxed().collect(Collectors.groupingBy(Function.identity(),Collectors.counting()));
+		occurance.forEach((key,value)->System.out.println(key+""+value));
+
+	}
+
+}
