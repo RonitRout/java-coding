@@ -1,0 +1,15 @@
+package java_coding_java8_arrays;
+
+import java.util.Arrays;
+import java.util.Optional;
+
+public class LongestWordInArray {
+
+	public static void main(String[] args) {
+		String s[] = { "abc", "abcd", "xs" };
+		Optional<String> longest = Arrays.stream(s).max((a, b) -> Integer.compare(a.length(), b.length()));
+		System.out.println("the longest element is :" + longest.get());
+
+	}
+
+}

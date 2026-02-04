@@ -1,0 +1,18 @@
+package java_coding_string;
+
+import java.util.Map;
+import java.util.function.Function;
+import java.util.stream.Collectors;
+
+public class CharOccrInString {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		String s = "Hello hi How Are you";
+
+		Map<Character, Long> map = s.toLowerCase().chars().filter(ch -> ch != ' ').mapToObj(c -> (char) c)
+				.collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
+		System.out.println("Characters frequency : " + map);
+	}
+
+}
